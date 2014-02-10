@@ -81,6 +81,8 @@ L<https://metacpan.org/pod/CPAN::Meta::Spec#Relationships>), but rather
 indicates what modules will likely not work once your distribution is
 installed.
 
+=for stopwords darkPAN
+
 This is a not-uncommon problem when modifying a module's API - there are other
 existing modules out on the CPAN (or a darkPAN) which use the old API, and will
 need to be updated when the new API is removed.  These modules are not
@@ -110,6 +112,8 @@ or more accurately:
     [Breaks]
     Foo::Bar = < 1.3
 
+=for stopwords CheckBreaks
+
 The L<[CheckBreaks]|Dist::Zilla::Plugin::Test::CheckBreaks> plugin can
 generate a test for your distribution that will check this field and provide
 diagnostic information to the user should any problems be identified.
@@ -117,6 +121,8 @@ diagnostic information to the user should any problems be identified.
 Additionally, the L<[Conflicts]|Dist::Zilla::Plugin::Conflicts> plugin can
 generate C<x_breaks> data, as well as a mechanism for checking for conflicts
 from within F<Makefile.PL>/F<Build.PL>.
+
+=for Pod::Coverage mvp_multivalue_args metadata
 
 =head1 SUPPORT
 
