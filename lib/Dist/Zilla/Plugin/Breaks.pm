@@ -8,6 +8,7 @@ use Moose;
 with 'Dist::Zilla::Role::MetaProvider';
 
 use CPAN::Meta::Requirements;
+use version;
 use namespace::autoclean;
 
 sub mvp_multivalue_args { qw(breaks) }
@@ -45,6 +46,11 @@ sub metadata
     my $breaks_data = $self->breaks;
     foreach my $package (keys %$breaks_data)
     {
+        $self->log('version without range specified. Did you intend to specify that any version of '
+                . $package . ' at or above '. $breaks_data->{$package}
+                . ' is bad?')
+            if eval { version->parse($breaks_data->{$package}); 1 };
+
         # this validates input data, and canonicalizes formatting
         $reqs->add_string_requirement($package, $breaks_data->{$package});
     }
@@ -63,7 +69,7 @@ __END__
     In your F<dist.ini>:
 
     [Breaks]
-    Foo::Bar = 1.0          ; anything at this version or below is out of date
+    Foo::Bar = <= 1.0       ; anything at this version or below is out of date
     Foo::Baz = == 2.35      ; just this one exact version is problematic
 
 =head1 DESCRIPTION
@@ -87,18 +93,22 @@ by the L<Lancaster consensus|http://www.dagolden.com/index.php/2098/the-annotate
 The exact syntax and use may continue to change until it is accepted as an
 official part of the meta specification.
 
-Packages should be specified with the version(s) that will B<not> work when
-your distribution is installed; for example, if all version of C<Foo::Bar> up
-to and including 1.2 will break, but a release of 1.3 will work, then specify
-the breakage as:
-
-    [Breaks]
-    Foo::Bar = 1.2
-
-Version ranges can be specified; see
+Version ranges can and should normally be specified; see
 L<https://metacpan.org/pod/CPAN::Meta::Spec#Version-Ranges>. They are
 interpreted as for C<conflicts> -- version(s) specified indicate the B<bad>
 versions of modules, not version(s) that must be present for normal operation.
+That is, packages should be specified with the version(s) that will B<not>
+work when your distribution is installed; for example, if all version of
+C<Foo::Bar> up to and including 1.2 will break, but a release of 1.3 will
+work, then specify the breakage as:
+
+    [Breaks]
+    Foo::Bar = <= 1.2
+
+or more accurately:
+
+    [Breaks]
+    Foo::Bar = < 1.3
 
 The L<[CheckBreaks]|Dist::Zilla::Plugin::Test::CheckBreaks> plugin can
 generate a test for your distribution that will check this field and provide

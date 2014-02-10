@@ -17,7 +17,7 @@ use Test::DZil;
                     [ GatherDir => ],
                     [ MetaJSON  => ],
                     [ Breaks => {
-                            'Foo::Bar' => '1.0',
+                            'Foo::Bar' => '<= 1.0',
                             'Foo::Baz' => '== 2.35',
                         }
                     ],
@@ -34,7 +34,7 @@ use Test::DZil;
         json(superhashof({
             dynamic_config => 0,
             x_breaks => {
-                'Foo::Bar' => '1.0',
+                'Foo::Bar' => '<= 1.0',
                 'Foo::Baz' => '== 2.35',
             },
         })),
