@@ -49,7 +49,7 @@ sub metadata
         $self->log('version without range specified. Did you intend to specify that any version of '
                 . $package . ' at or above '. $breaks_data->{$package}
                 . ' is bad?')
-            if eval { version->parse($breaks_data->{$package}); 1 };
+            if version::is_lax($breaks_data->{$package});
 
         # this validates input data, and canonicalizes formatting
         $reqs->add_string_requirement($package, $breaks_data->{$package});
