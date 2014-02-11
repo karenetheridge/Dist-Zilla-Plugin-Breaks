@@ -66,7 +66,7 @@ __END__
 
 =head1 SYNOPSIS
 
-    In your F<dist.ini>:
+In your F<dist.ini>:
 
     [Breaks]
     Foo::Bar = <= 1.0       ; anything at this version or below is out of date
