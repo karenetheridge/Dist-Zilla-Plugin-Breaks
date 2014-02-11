@@ -77,7 +77,7 @@ __END__
 This plugin adds distribution metadata regarding other modules and version
 that are not compatible with your distribution's release.  It is not quite the
 same as the C<conflicts> field in prerequisite metadata (see
-L<https://metacpan.org/pod/CPAN::Meta::Spec#Relationships>), but rather
+L<CPAN::Meta::Spec/Relationships>), but rather
 indicates what modules will likely not work once your distribution is
 installed.
 
@@ -96,7 +96,7 @@ The exact syntax and use may continue to change until it is accepted as an
 official part of the meta specification.
 
 Version ranges can and should normally be specified; see
-L<https://metacpan.org/pod/CPAN::Meta::Spec#Version-Ranges>. They are
+L<CPAN::Meta::Spec/Version Ranges>. They are
 interpreted as for C<conflicts> -- version(s) specified indicate the B<bad>
 versions of modules, not version(s) that must be present for normal operation.
 That is, packages should be specified with the version(s) that will B<not>
@@ -137,7 +137,7 @@ I am also usually active on irc, as 'ether' at C<irc.perl.org>.
 =begin :list
 
 * L<Annotated Lancaster consensus|http://www.dagolden.com/index.php/2098/the-annotated-lancaster-consensus/>.
-* L<https://metacpan.org/pod/CPAN::Meta::Spec#Relationships>
+* L<CPAN::Meta::Spec/Relationships>
 * L<Dist::Zilla::Plugin::Test::CheckBreaks>
 * L<Dist::Zilla::Plugin::Conflicts>
 * L<Dist::CheckConflicts>
