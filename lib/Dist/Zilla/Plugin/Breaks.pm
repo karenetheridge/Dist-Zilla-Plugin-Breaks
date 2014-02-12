@@ -118,7 +118,7 @@ generate a test for your distribution that will check this field and provide
 diagnostic information to the user should any problems be identified.
 
 Additionally, the L<[Conflicts]|Dist::Zilla::Plugin::Conflicts> plugin can
-generate C<x_breaks> data, as well as a mechanism for checking for conflicts
+generate C<x_breaks> data, as well as a (non-standard) mechanism for checking for conflicts
 from within F<Makefile.PL>/F<Build.PL>.
 
 =for Pod::Coverage mvp_multivalue_args metadata
