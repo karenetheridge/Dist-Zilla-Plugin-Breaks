@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+          - remove warning when a bare version number (without ">=") is
+            provided in configs, as this is perfectly legal
 
 0.001     2014-02-10 00:51:24Z
           - Initial release.

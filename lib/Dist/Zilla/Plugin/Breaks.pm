@@ -9,7 +9,6 @@ with 'Dist::Zilla::Role::MetaProvider';
 
 use CPAN::Meta::Requirements;
 use Carp 'confess';
-use version;
 use namespace::autoclean;
 
 sub mvp_multivalue_args { qw(breaks) }
@@ -47,11 +46,6 @@ sub metadata
     my $breaks_data = $self->breaks;
     foreach my $package (keys %$breaks_data)
     {
-        $self->log('version without range specified. Did you intend to specify that any version of '
-                . $package . ' at or above '. $breaks_data->{$package}
-                . ' is bad?')
-            if version::is_lax($breaks_data->{$package});
-
         # this validates input data, and canonicalizes formatting
         $reqs->add_string_requirement($package, $breaks_data->{$package});
     }
@@ -96,7 +90,7 @@ by the L<Lancaster consensus|http://www.dagolden.com/index.php/2098/the-annotate
 The exact syntax and use may continue to change until it is accepted as an
 official part of the meta specification.
 
-Version ranges can and should normally be specified; see
+Version ranges can and normally should be specified; see
 L<CPAN::Meta::Spec/Version Ranges>. They are
 interpreted as for C<conflicts> -- version(s) specified indicate the B<bad>
 versions of modules, not version(s) that must be present for normal operation.
@@ -112,6 +106,10 @@ or more accurately:
 
     [Breaks]
     Foo::Bar = < 1.3
+
+A bare version with no operator is interpreted as C<< >= >> -- all versions at
+or above the one specified are considered bad -- which is generally not what
+you want to say!
 
 =for stopwords CheckBreaks
 
