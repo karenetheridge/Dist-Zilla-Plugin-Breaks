@@ -8,6 +8,7 @@ use Moose;
 with 'Dist::Zilla::Role::MetaProvider';
 
 use CPAN::Meta::Requirements;
+use Carp 'confess';
 use version;
 use namespace::autoclean;
 
