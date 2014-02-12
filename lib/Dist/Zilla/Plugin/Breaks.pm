@@ -26,7 +26,7 @@ around BUILDARGS => sub
     my $args = $class->$orig(@_);
     my ($zilla, $plugin_name) = delete @{$args}{qw(zilla plugin_name)};
 
-    confess "Missing modules in [Breaks]" if not keys %$args;
+    confess 'Missing modules in [Breaks]' if not keys %$args;
 
     return {
         zilla => $zilla,
