@@ -140,6 +140,7 @@ I am also usually active on irc, as 'ether' at C<irc.perl.org>.
 * L<Dist::Zilla::Plugin::Test::CheckBreaks>
 * L<Dist::Zilla::Plugin::Conflicts>
 * L<Dist::CheckConflicts>
+* L<Module::Install::CheckConflicts>
 
 =end :list
 
