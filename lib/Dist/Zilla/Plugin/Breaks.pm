@@ -113,7 +113,7 @@ you want to say!
 
 =for stopwords CheckBreaks
 
-The L<[CheckBreaks]|Dist::Zilla::Plugin::Test::CheckBreaks> plugin can
+The L<[Test::CheckBreaks]|Dist::Zilla::Plugin::Test::CheckBreaks> plugin can
 generate a test for your distribution that will check this field and provide
 diagnostic information to the user should any problems be identified.
 
