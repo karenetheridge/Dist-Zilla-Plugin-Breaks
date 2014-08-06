@@ -1,5 +1,7 @@
+/.ackrc
 /.build/
-!.gitignore
+!/.gitignore
 /.latest
 /Dist-Zilla-Plugin-Breaks-*/
 /Dist-Zilla-Plugin-Breaks-*.tar.gz
+/tmp/
