@@ -2,6 +2,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::Breaks;
 # ABSTRACT: Add metadata about potential breakages to your distribution
+# KEYWORDS: distribution metadata prerequisites upstream dependencies modules conflicts breaks breakages
 # vim: set ts=8 sw=4 tw=78 et :
 
 use Moose;
