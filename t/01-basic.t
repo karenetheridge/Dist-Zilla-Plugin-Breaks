@@ -23,6 +23,7 @@ my $tzil = Builder->from_config(
     },
 );
 
+$tzil->chrome->logger->set_debug(1);
 $tzil->build;
 
 cmp_deeply(
@@ -35,6 +36,10 @@ cmp_deeply(
         },
     }),
     'metadata correct when valid breakages are specified',
-);
+)
+or diag 'got distmeta: ', explain $tzil->distmeta;
+
+diag 'got log messages: ', explain $tzil->log_messages
+    if not Test::Builder->new->is_passing;
 
 done_testing;
