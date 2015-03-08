@@ -134,15 +134,12 @@ I am also usually active on irc, as 'ether' at C<irc.perl.org>.
 
 =head1 SEE ALSO
 
-=begin :list
-
+=for :list
 * L<Annotated Lancaster consensus|http://www.dagolden.com/index.php/2098/the-annotated-lancaster-consensus/>.
 * L<CPAN::Meta::Spec/Relationships>
 * L<Dist::Zilla::Plugin::Test::CheckBreaks>
 * L<Dist::Zilla::Plugin::Conflicts>
 * L<Dist::CheckConflicts>
 * L<Module::Install::CheckConflicts>
-
-=end :list
 
 =cut
