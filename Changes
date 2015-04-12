@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+          - clarify wording in abstract
 
 0.003     2014-08-16 23:34:49Z
           - drop some unneeded prereqs and update metadata
