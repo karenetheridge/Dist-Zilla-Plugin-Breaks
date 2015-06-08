@@ -5,6 +5,8 @@ package Dist::Zilla::Plugin::Breaks;
 # KEYWORDS: distribution metadata prerequisites upstream dependencies modules conflicts breaks breakages
 # vim: set ts=8 sw=4 tw=78 et :
 
+our $VERSION = '0.004';
+
 use Moose;
 with 'Dist::Zilla::Role::MetaProvider';
 
