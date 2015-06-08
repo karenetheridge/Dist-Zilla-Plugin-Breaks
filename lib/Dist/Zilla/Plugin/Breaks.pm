@@ -86,7 +86,7 @@ existing modules out on the CPAN (or a darkPAN) which use the old API, and will
 need to be updated when the new API is removed.  These modules are not
 prerequisites -- our distribution does not use those modules, but rather those
 modules use B<us>. So, it's not valid to list those modules in our
-prerequisites -- besides, it would likely be a circular dependency!
+prerequisites -- besides, it would likely (almost certainly) be a circular dependency!
 
 The data is added to metadata in the form of the C<x_breaks> field, as set out
 by the L<Lancaster consensus|http://www.dagolden.com/index.php/2098/the-annotated-lancaster-consensus/>.
