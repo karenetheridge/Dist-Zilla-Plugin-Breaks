@@ -4,11 +4,11 @@
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Breaks - Add metadata about potential breakages to your distribution
+Dist::Zilla::Plugin::Breaks - Add metadata about potential breakages caused by your distribution
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
@@ -34,7 +34,7 @@ existing modules out on the CPAN (or a darkPAN) which use the old API, and will
 need to be updated when the new API is removed.  These modules are not
 prerequisites -- our distribution does not use those modules, but rather those
 modules use B<us>. So, it's not valid to list those modules in our
-prerequisites -- besides, it would likely be a circular dependency!
+prerequisites -- besides, it would likely (almost certainly) be a circular dependency!
 
 The data is added to metadata in the form of the C<x_breaks> field, as set out
 by the L<Lancaster consensus|http://www.dagolden.com/index.php/2098/the-annotated-lancaster-consensus/>.
@@ -74,14 +74,6 @@ from within F<Makefile.PL>/F<Build.PL>.
 
 =for Pod::Coverage mvp_multivalue_args metadata
 
-=head1 SUPPORT
-
-=for stopwords irc
-
-Bugs may be submitted through L<the RT bug tracker|https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-Breaks>
-(or L<bug-Dist-Zilla-Plugin-Breaks@rt.cpan.org|mailto:bug-Dist-Zilla-Plugin-Breaks@rt.cpan.org>).
-I am also usually active on irc, as 'ether' at C<irc.perl.org>.
-
 =head1 SEE ALSO
 
 =over 4
@@ -112,11 +104,24 @@ L<Module::Install::CheckConflicts>
 
 =back
 
+=head1 SUPPORT
+
+Bugs may be submitted through L<the RT bug tracker|https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-Breaks>
+(or L<bug-Dist-Zilla-Plugin-Breaks@rt.cpan.org|mailto:bug-Dist-Zilla-Plugin-Breaks@rt.cpan.org>).
+
+There is also a mailing list available for users of this distribution, at
+L<http://dzil.org/#mailing-list>.
+
+There is also an irc channel available for users of this distribution, at
+L<C<#distzilla> on C<irc.perl.org>|irc://irc.perl.org/#distzilla>.
+
+I am also usually active on irc, as 'ether' at C<irc.perl.org>.
+
 =head1 AUTHOR
 
 Karen Etheridge <ether@cpan.org>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 COPYRIGHT AND LICENCE
 
 This software is copyright (c) 2014 by Karen Etheridge.
 
