@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Dist::Zilla::Plugin::Breaks;
-# vim: set ts=8 sts=4 sw=4 tw=115 et :
+# vim: set ts=8 sts=2 sw=2 tw=100 et :
 # ABSTRACT: Add metadata about potential breakages caused by your distribution
 # KEYWORDS: distribution metadata prerequisites upstream dependencies modules conflicts breaks breakages
 
