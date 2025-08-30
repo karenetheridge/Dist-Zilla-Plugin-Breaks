@@ -1,5 +1,7 @@
 Revision history for Dist-Zilla-Plugin-Breaks
 
+{{$NEXT}}
+
 0.005     2025-08-30 16:36:37Z
           - tooling refresh
 

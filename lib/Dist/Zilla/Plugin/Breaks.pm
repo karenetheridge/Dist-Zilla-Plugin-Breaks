@@ -5,7 +5,7 @@ package Dist::Zilla::Plugin::Breaks;
 # ABSTRACT: Add metadata about potential breakages caused by your distribution
 # KEYWORDS: distribution metadata prerequisites upstream dependencies modules conflicts breaks breakages
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
 use Moose;
 with 'Dist::Zilla::Role::MetaProvider';
